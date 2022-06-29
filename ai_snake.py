@@ -85,6 +85,14 @@ object_map.append(food)
 def mouseClick(x, y):
     print(x, y)  # print mouse clik cords
 
+    # check mouse coordinates of clicks. If button "Auto learn" was clicked"
+    if x > -475 and x < -447 and y > 35 and y < 65:
+
+        placeButton('square', 'red', (-460, 0))
+        wn.update()
+        autoPlay()
+        print('Auto learn started')
+
     # check mouse coordinates of clicks. If button "Record" was clicked"
     if x > -475 and x < -447 and y > -15 and y < 15:
 
@@ -110,6 +118,10 @@ def mouseClick(x, y):
 
 # listen mouse clicks
 turtle.onscreenclick(mouseClick, 1)
+
+# draw button "Autolearn"
+placeButton('square', 'green', (-460, 50))
+placeText('Auto Learn(a)', (-360, 40))
 
 # draw button "Record"
 placeButton('square', 'green', (-460, 0))
